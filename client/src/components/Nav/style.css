@@ -1,0 +1,34 @@
+.navbar {
+    height: 100%;
+    background: whitesmoke;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    position: relative;
+}
+
+.nav-img {
+    background: url(./books2.jpg);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 300px;
+}
+.nav-tags {
+    position: fixed;
+    top: 30px;
+    left: 20px;
+   
+}
+.title {
+    color: #ede3e1;
+    font-family: 'Cinzel Decorative', cursive;
+    font-size: 2rem;
+}
+
+.search, .save {
+    color: #deb087;
+    font-family: 'Cinzel Decorative', cursive;
+    padding-top: 15px; 
+    padding-left: 8rem;
+}
