@@ -7,8 +7,8 @@ function Nav() {
         <div className="nav-tags">
         <div className="title">React Google Book Search</div>
         <div className="row">
-        <div className="col-4 search">Search</div>
-        <div className="col-4 save">Save</div>
+        <a className="nav-link col-4 search" href="/">Search</a>
+        <a className="nav-link col-4 save" href="/">Save</a>
         <div className="col-4"></div>
        
         </div>
