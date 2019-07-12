@@ -13,7 +13,7 @@ function Nav() {
        
         </div>
         </div>
-        {/* <div>Search</div> */}
+      
       
     </nav>
   );
