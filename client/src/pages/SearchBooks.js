@@ -20,17 +20,17 @@ class SearchBooks extends Component {
 
 
     componentDidMount() {
-        this.loadBooks();
+        // this.loadBooks();
     }
 
-    loadBooks = () => {
-        API.getBooks()
-            .then(res =>
+    // loadBooks = () => {
+    //     API.getBooks()
+    //         .then(res =>
 
-                this.setState({ books: res.data, title: "", author: "", synopsis: "" })
-            )
-            .catch(err => console.log(err));
-    };
+    //             this.setState({ books: res.data, title: "", author: "", synopsis: "" })
+    //         )
+    //         .catch(err => console.log(err));
+    // };
 
 
     handleInputChange = event => {
@@ -51,9 +51,24 @@ class SearchBooks extends Component {
     };
 
     handleSavedButton = event => {
-        // console.log(event)
+        console.log(event.target.id)
+        console.log(event.target)
         event.preventDefault();
-        console.log(this.state.books.id)
+        console.log(this.state.books)
+        let savedBooks = this.state.books.filter(book => book.id === event.target.id)
+        savedBooks = savedBooks[0];
+        
+
+        API.saveBook({
+            title: savedBooks.volumeInfo.title,
+            authors: savedBooks.volumeInfo.authors,
+            description: savedBooks.volumeInfo.description,
+            image: savedBooks.volumeInfo.imageLinks.smallThumbnail,
+            link: savedBooks.volumeInfo.previewLink
+            })
+            .then(this.setState({ message: alert("Your book is saved") }))
+            .catch(err => console.log(err))
+        
     }
 
     render() {
@@ -97,17 +112,15 @@ class SearchBooks extends Component {
                                            
                                             <p>{book.volumeInfo.authors}</p>
                                             <p>{book.volumeInfo.description}</p>
-                                            <a  href={book.volumeInfo.previewLink}><button type="button" className="btn btn-info">View</button></a>   <button className="saveBook btn btn-primary" id={book.id} onClick={(event) => this.handleSavedButton(event)}>
+                                            <a  href={book.volumeInfo.previewLink}><button type="button" className="btn btn-info">View</button></a>   <button className="saveBook btn btn-primary" id={book.id} onClick={(id) => this.handleSavedButton(id)}>
                                             Save Book
                                         </button>
+
+                                       
                                             </div>
 
                                         </div>
                                         
-                                        
-
-
-
 
                                     </ListItem>
                                 ))}

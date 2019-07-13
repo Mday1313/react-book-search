@@ -1,11 +1,11 @@
 import React from "react";
 
-import Nav from "../components/Nav";
+
 
 function NoMatch() {
     return (
         <div>
-            <Nav></Nav>
+           
             
                 <h1 className="text-white">404 Page Not Found</h1>
                 <h1>
