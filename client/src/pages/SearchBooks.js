@@ -46,13 +46,12 @@ class SearchBooks extends Component {
         if (this.state.title) {
             API.getSearchBooks(this.state.title)
                 .then(res => this.setState({ books: res.data.items }))
-                .catch(err => console.log(err));
+                .catch(err => this.setState({ error: err.items }));
         }
     };
 
     handleSavedButton = event => {
-        console.log(event.target.id)
-        console.log(event.target)
+        
         event.preventDefault();
         console.log(this.state.books)
         let savedBooks = this.state.books.filter(book => book.id === event.target.id)
