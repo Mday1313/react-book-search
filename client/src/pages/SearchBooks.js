@@ -19,19 +19,6 @@ class SearchBooks extends Component {
     };
 
 
-    componentDidMount() {
-        // this.loadBooks();
-    }
-
-    // loadBooks = () => {
-    //     API.getBooks()
-    //         .then(res =>
-
-    //             this.setState({ books: res.data, title: "", author: "", synopsis: "" })
-    //         )
-    //         .catch(err => console.log(err));
-    // };
-
 
     handleInputChange = event => {
         const { name, value } = event.target;
@@ -40,6 +27,7 @@ class SearchBooks extends Component {
         });
     };
 
+    
     //function to control the submit button of the search form 
     handleFormSubmit = event => {
         event.preventDefault();
@@ -48,6 +36,9 @@ class SearchBooks extends Component {
                 .then(res => this.setState({ books: res.data.items }))
                 .catch(err => this.setState({ error: err.items }));
         }
+        this.setState({
+           title: ""
+        })
     };
 
     handleSavedButton = event => {
