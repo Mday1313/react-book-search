@@ -10,10 +10,6 @@ This is a Full Stack MERN Application. You can search for books through the Goog
     - Mongoose
     - Node.js
 
-```bash
-
-```
-
 
 ## Link to my App
-[React Book Search](https://choosealicense.com/licenses/mit/)
+[React Book Search](https://rainy-day-reading.herokuapp.com/)
